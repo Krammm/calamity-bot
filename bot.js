@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-
+// boh
 const client = new Discord.Client();
 const prefix = '!';
 var insulti = ['Quel frocione di lovy', ' :poop:', 'Ecco adesso mi devo fare la doccia...', 'Perchè parli della merda?'];
