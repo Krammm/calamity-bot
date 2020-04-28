@@ -74,6 +74,9 @@ client.on('message', message => {
         // const user = message.mentions.users.first();
         // message.guild.ban(user);
         break;
+      case 'setrole':
+        const user = message.mentions.users.first();
+        user.addRole(args[2]);
       default:
         message.channel.send("Command: " + command + " Line: " + line);
         break;
