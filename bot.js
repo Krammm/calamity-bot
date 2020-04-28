@@ -77,28 +77,35 @@ client.on('message', message => {
         // message.guild.ban(user);
         break;
       case 'addrole':
-        try { 
-            user.addRole(role);
-            message.channel.send('Ho aggiunto ' + user + " al ruolo " + role + ".");
-            } catch(error) {
-                console.log(error);
-            }
-        break;
+            try { 
+                user.addRole(role);
+                message.channel.send('Ho aggiunto ' + user + " al ruolo " + role + ".");
+                } catch(error) {
+                    console.log(error);
+                    message.channel.send("Errore nell'aggiunta del ruolo.");
+                }
+             break;
       case 'removerole':
-        try { 
-            user.removeRole(role);
-            message.channel.send('Ho tolto ' + user + " dal ruolo " + role + ".");
-            } catch(error) {
-                console.log(error);
-            }
+            try { 
+                user.removeRole(role);
+                message.channel.send('Ho tolto ' + user + " dal ruolo " + role + ".");
+                } catch(error) {
+                    console.log(error);
+                    message.channel.send("Errore nella rimozione del ruolo.");
+                }
             break;
         case 'clear':
-            async function clear() {
-                message.delete();
-                const fetched = await message.channel.fetchMessages({limit: 99});
-                message.channel.bulkDelete(fetched);
-            }
+            try {
+                async function clear() {
+                 message.delete();
+                 const fetched = await message.channel.fetchMessages({limit: 99});
+                 message.channel.bulkDelete(fetched);
+                }
             clear();
+            } catch(error) {
+                console.log(error);
+                message.channel.send("Errore nell'eliminazione dei messaggi.");
+            }
             break;
       default:
         message.channel.send("Command: " + command + " Line: " + line);
