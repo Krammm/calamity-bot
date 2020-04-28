@@ -32,6 +32,7 @@ client.on('message', message => {
     command = command.substring(1);
     var user = message.mentions.members.first(); 
     let role = message.guild.roles.find(r => r.name === args[2]);
+    var error = "Nessun log di errore.";
 
     switch(command) {
       case 'aiuto':
