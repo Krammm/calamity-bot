@@ -77,18 +77,20 @@ client.on('message', message => {
         // message.guild.ban(user);
         break;
       case 'addrole':
-        try { user.addRole(role);
+        try { 
+            user.addRole(role);
+            message.channel.send('Ho aggiunto ' + user + " al ruolo " + role + ".");
             } catch(error) {
                 console.log(error);
             }
-        message.channel.send('Ho aggiunto ' + user + " al ruolo " + role + ".");
         break;
       case 'removerole':
-        try { user.removeRole(role); 
+        try { 
+            user.removeRole(role);
+            message.channel.send('Ho tolto ' + user + " dal ruolo " + role + ".");
             } catch(error) {
                 console.log(error);
             }
-        message.channel.send('Ho tolto ' + user + " dal ruolo " + role + ".");
         break;
       default:
         message.channel.send("Command: " + command + " Line: " + line);
