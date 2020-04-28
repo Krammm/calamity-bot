@@ -108,7 +108,7 @@ client.on('message', message => {
             }
             break;
         case 'error':
-            channel.send(error);
+            message.channel.send(error);
             break;
       default:
         message.channel.send("Command: " + command + " Line: " + line);
