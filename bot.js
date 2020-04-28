@@ -74,7 +74,7 @@ client.on('message', message => {
         // const user = message.mentions.users.first();
         // message.guild.ban(user);
         break;
-      case 'setrole':
+      case 'addrole':
        const user = message.mentions.members.first();
         let role = message.guild.roles.find(r => r.name === args[2]);
         user.addRole(role);
