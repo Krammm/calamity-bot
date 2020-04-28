@@ -76,7 +76,7 @@ client.on('message', message => {
         break;
       case 'setrole':
         const user = message.mentions.members.first();
-        const role = message.guild.roles.find('name', args[2]);
+        let role = message.guild.roles.find(r => r.name === args[2]);
         user.addRole(role);
         break;
       default:
