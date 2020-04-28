@@ -32,7 +32,6 @@ client.on('message', message => {
     command = command.substring(1);
     var user = message.mentions.members.first(); 
     let role = message.guild.roles.find(r => r.name === args[2]);
-    var error = "Nessun log di errore.";
 
     switch(command) {
       case 'aiuto':
@@ -107,9 +106,6 @@ client.on('message', message => {
                 console.log(error);
                 message.channel.send("Errore nell'eliminazione dei messaggi.");
             }
-            break;
-        case 'error':
-            message.channel.send(error);
             break;
       default:
         message.channel.send("Command: " + command + " Line: " + line);
