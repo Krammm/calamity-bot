@@ -78,13 +78,13 @@ client.on('message', message => {
        const user = message.mentions.members.first();
         let role = message.guild.roles.find(r => r.name === args[2]);
         user.addRole(role);
-        message.channel.send('Ho aggiunto ' + user + " al ruolo " + role ".";
+        message.channel.send('Ho aggiunto ' + user + " al ruolo " + role ".");
         break;
       case 'removerole':
         const user = message.mentions.members.first();
         let role = message.guild.roles.find(r => r.name === args[2]);
         user.removeRole(role);
-        message.channel.send('Ho tolto ' + user + " dal ruolo " + role ".";
+        message.channel.send('Ho tolto ' + user + " dal ruolo " + role ".");
         break;
       default:
         message.channel.send("Command: " + command + " Line: " + line);
