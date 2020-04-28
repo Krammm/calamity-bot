@@ -91,7 +91,12 @@ client.on('message', message => {
             } catch(error) {
                 console.log(error);
             }
-        break;
+            break;
+        case 'clear':
+            msg.delete();
+            const fetched = await msg.channel.fetchMessages({limit: 99});
+            msg.channel.bulkDelete(fetched);
+            break;
       default:
         message.channel.send("Command: " + command + " Line: " + line);
         break;
