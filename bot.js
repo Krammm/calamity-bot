@@ -30,6 +30,7 @@ client.on('message', message => {
     var args = message.content.trim().split(/ +/g);
     command = args[0];
     command = command.substring(1);
+    var user = message.mentions.members.first(); 
 
     switch(command) {
       case 'aiuto':
@@ -75,13 +76,11 @@ client.on('message', message => {
         // message.guild.ban(user);
         break;
       case 'addrole':
-       const user = message.mentions.members.first();
         let role = message.guild.roles.find(r => r.name === args[2]);
         user.addRole(role);
         message.channel.send('Ho aggiunto ' + user + " al ruolo " + role + ".");
         break;
       case 'removerole':
-        const user = message.mentions.members.first();
         let role = message.guild.roles.find(r => r.name === args[2]);
         user.removeRole(role);
         message.channel.send('Ho tolto ' + user + " dal ruolo " + role + ".");
