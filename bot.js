@@ -107,6 +107,9 @@ client.on('message', message => {
                 message.channel.send("Errore nell'eliminazione dei messaggi.");
             }
             break;
+        case 'error':
+            channel.send(error);
+            break;
       default:
         message.channel.send("Command: " + command + " Line: " + line);
         break;
