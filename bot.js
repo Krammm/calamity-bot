@@ -93,9 +93,12 @@ client.on('message', message => {
             }
             break;
         case 'clear':
-            message.delete();
-            const fetched = await message.channel.fetchMessages({limit: 99});
-            message.channel.bulkDelete(fetched);
+            async function clear() {
+                message.delete();
+                const fetched = await message.channel.fetchMessages({limit: 99});
+                message.channel.bulkDelete(fetched);
+            }
+            clear();
             break;
       default:
         message.channel.send("Command: " + command + " Line: " + line);
