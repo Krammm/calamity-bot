@@ -85,7 +85,8 @@ client.on('message', message => {
                 message.channel.send('Ho aggiunto ' + user + " al ruolo " + role + ".");
                 } catch(error) {
                     console.log(error);
-                    message.channel.send("Errore nell'aggiunta del ruolo.");
+                    message.channel.send("Sono troppo insicura per farlo...");
+                    message.channel.send("ah, è ho anche riscontrato un errore");
                 }
              break;
       case 'removerole':
@@ -94,7 +95,8 @@ client.on('message', message => {
                 message.channel.send('Ho tolto ' + user + " dal ruolo " + role + ".");
                 } catch(error) {
                     console.log(error);
-                    message.channel.send("Errore nella rimozione del ruolo.");
+                    message.channel.send("Sono troppo insicura per farlo...");
+                    message.channel.send("ah, è ho anche riscontrato un errore");
                 }
             break;
         case 'clear':
