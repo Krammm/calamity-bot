@@ -4,6 +4,7 @@ const client = new Discord.Client();
 const prefix = '!';
 const admin = [509779445557493821, 544579907133636619, 296353825550237697,211131331155984385];
 var insulti = ['Quel frocione di lovy', ' :poop:', 'Ecco adesso mi devo fare la doccia...', 'Perchè parli della merda?'];
+var command_channel = 704623913614704731;
 
 client.on('ready', () => {
 
@@ -24,7 +25,9 @@ client.on('message', message => {
   command = message.content.toLowerCase()
 
   if (command.startsWith(prefix)) { // Se il messaggio è un comando
-
+      if(command.channel.id != command_channel){
+        message.reply("testa di cazzo non ti permettere!");
+      }
 
     var line = command;
     line = line.substring(1);
@@ -87,6 +90,7 @@ client.on('message', message => {
                     console.log(error);
                     message.channel.send("Sono troppo insicura per farlo...");
                     message.channel.send("ah, è ho anche riscontrato un errore");
+                    //message.channel.send("@Krammm , @NinjaSbrillo non sapete neanche programmarmi")
                 }
              break;
       case 'removerole':
@@ -97,6 +101,7 @@ client.on('message', message => {
                     console.log(error);
                     message.channel.send("Sono troppo insicura per farlo...");
                     message.channel.send("ah, è ho anche riscontrato un errore");
+                    //message.channel.send("@Krammm , @NinjaSbrillo non sapete neanche programmarmi")
                 }
             break;
         case 'clear':
