@@ -25,9 +25,9 @@ client.on('message', message => {
   command = message.content.toLowerCase()
 
   if (command.startsWith(prefix)) { // Se il messaggio è un comando
-      if(!command.channel.name.includes("💻comandi💻")){
-        message.reply("testa di cazzo non ti permettere!");
-      }
+      //if(!command.channel.name.includes("💻comandi💻")){
+      //  message.reply("testa di cazzo non ti permettere!");
+      //}
 
     var line = command;
     line = line.substring(1);
