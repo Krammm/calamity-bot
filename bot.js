@@ -74,8 +74,10 @@ client.on('message', message => {
         message.channel.send('Il messaggio ha ' + lunghezzamess + ' caratteri.');
         break;
       case 'ban':
-        // const user = message.mentions.users.first();
-        // message.guild.ban(user);
+        if(admin.includes(message.author.id))
+            const user = message.mentions.users.first();
+            message.guild.ban(user);
+        else message.channel.send("Mi dispiace testa di cazzo non lo puoi fare");
         break;
       case 'addrole':
             try { 
