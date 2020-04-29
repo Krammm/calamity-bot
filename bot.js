@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 // boh
 const client = new Discord.Client();
 const prefix = '!';
+const admin = [509779445557493821, 544579907133636619, 296353825550237697,211131331155984385];
 var insulti = ['Quel frocione di lovy', ' :poop:', 'Ecco adesso mi devo fare la doccia...', 'Perchè parli della merda?'];
 
 client.on('ready', () => {
