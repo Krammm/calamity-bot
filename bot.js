@@ -79,7 +79,7 @@ client.on('message', message => {
             case 'ban':
                 var x, t;
                 for (x in admin) {
-                    if (x.includes(message.author.id)) {
+                    if (admin[x].includes(message.author.id)) {
                         t = 1;
                     } else t = 0;
                 }
