@@ -125,8 +125,10 @@ client.on('message', message => {
                 break;
             case 'exppitt':
                 try {
+                       line = line.replace("exppitt", "");
                        line = line.replace("r", "v");
                        line = line.replace("w", "u");
+                       line = line.replace("a", "o");
                        line = line.replace("k", "c");
                         message.channel.send(line);
                 } catch (error) {
