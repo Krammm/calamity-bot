@@ -123,6 +123,17 @@ client.on('message', message => {
                     message.channel.send("Errore nell'eliminazione dei messaggi.");
                 }
                 break;
+            case 'exppitt':
+                try {
+                       line = line.replace("r", "v");
+                       line = line.replace("w", "u");
+                       line = line.replace("k", "c");
+                        message.channel.send(line);
+                } catch (error) {
+                    console.log(error);
+                    message.channel.send("Errore nella conversione.";
+                }
+                break;
             default:
                 message.channel.send("Command: " + command + " Line: " + line);
                 break;
