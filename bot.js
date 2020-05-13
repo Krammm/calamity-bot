@@ -131,7 +131,7 @@ client.on('message', message => {
                         message.channel.send(line);
                 } catch (error) {
                     console.log(error);
-                    message.channel.send("Errore nella conversione.";
+                    message.channel.send("Errore nella conversione.");
                 }
                 break;
             default:
