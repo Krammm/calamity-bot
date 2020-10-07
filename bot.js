@@ -26,7 +26,7 @@ client.on('message', message => {
     
     // Delete music bots commands in a non-music command channel
     if (command.startsWith("-") && command.channel.name.ID != "515114553768673281") {
-        message.delete();
+        message.delete(2);
     }
     
     if (command.startsWith(prefix)) { // Se il messaggio è un comando
