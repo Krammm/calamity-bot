@@ -25,9 +25,14 @@ client.on('message', message => {
     command = message.content.toLowerCase()
     
     // Delete music bots commands in a non-music command channel
-    if (command.startsWith("-") && command.channel.name.ID != "515114553768673281") {
-        message.delete(2);
+    
+    if (command.startsWith("-") && !message.channel.name.includes("music-commands")) {
+        message.delete();
     }
+    if ((message.author.id === 235088799074484224 || message.author.id === 234395307759108106) && !message.channel.name.includes("music-commands")) {
+        message.delete();
+    }
+    
     
     if (command.startsWith(prefix)) { // Se il messaggio è un comando
         //if(!command.channel.name.includes("💻comandi💻")){
