@@ -23,7 +23,12 @@ client.on('message', message => {
     }
 
     command = message.content.toLowerCase()
-
+    
+    // Delete music bots commands in a non-music command channel
+    if (command.startsWith("-") && !command.channel.name.includes("music-commands") {
+        message.delete();
+    }
+    
     if (command.startsWith(prefix)) { // Se il messaggio è un comando
         //if(!command.channel.name.includes("💻comandi💻")){
         //  message.reply("testa di cazzo non ti permettere!");
