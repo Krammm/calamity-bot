@@ -155,10 +155,10 @@ client.on('message', message => {
                 try {
                     user = message.mentions.users.first();
 
-                    mutedUsers.push(user);
+                    mutedUsers.push(user.id);
                     
                     mutedUsers.forEach(element => {
-                        console.log(element.id);
+                        console.log(element);
                     });
                     //mutedUsersIndex = mutedUsersIndex + 1;
 
