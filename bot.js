@@ -6,8 +6,8 @@ const admin = [509779445557493821, 544579907133636619, 296353825550237697, 21113
 var insulti = ['Quel frocione di lovy', ' :poop:', 'Ecco adesso mi devo fare la doccia...', 'Perchè parli della merda?'];
 var command_channel = 704623913614704731;
 
-var mutedUsers = [];
-var mutedUsersIndex = 0;
+var mutedUsers = new Array();
+//var mutedUsersIndex = 0;
 
 client.on('ready', () => {
 
@@ -148,8 +148,9 @@ client.on('message', message => {
             case 'mute':
                 try {
                     user = message.mentions.users.first();
-                    mutedUsers[mutedUsersIndex] = user;
-                    mutedUsersIndex = mutedUsersIndex + 1;
+                    mutedUsers.push(user);
+                    console.log(user);
+                    //mutedUsersIndex = mutedUsersIndex + 1;
                 } catch (error) {
                     console.log(error);
                     message.channel.send("Errore nel mutare.");
@@ -164,7 +165,7 @@ client.on('message', message => {
 
 
 
-
+/*
     if (command.includes('lovecchio') || command.includes('lovi')) {
 
         var x = Math.random();
@@ -197,10 +198,12 @@ client.on('message', message => {
         message.channel.send('heil :hitler: :nazi:');
 
     }
-
+*/
 });
 
 
 // THIS  MUST  BE  THIS  WAY
 
 client.login(process.env.BOT_TOKEN); //BOT_TOKEN is the Client Secret
+
+
