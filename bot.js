@@ -30,7 +30,7 @@ client.on('message', message => {
     // Delete music bots commands in a non-music command channel
     
     for (x in mutedUsers) {
-                    if (mutedUsers[x] == message.author.i) {
+                    if (mutedUsers[x] == message.author.id) {
                         message.delete();
                     }
                 }
