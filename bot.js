@@ -33,7 +33,7 @@ client.on('message', message => {
         message.delete();
     }
     if ((message.author.id == 234395307759108106) && !message.channel.name.includes("music-commands")) {
-        message.deletehow to delet();
+        message.delete();
     }
     
     
