@@ -54,8 +54,8 @@ client.on('message', message => {
         var line = command;
         line = line.substring(1);
         var args = message.content.trim().split(/ +/g);
-        var command = args[0];
-        let command = command.substring(1);
+        command = args[0];
+        command = command.substring(1);
         var user = message.mentions.members.first();
         let role = message.guild.roles.find(r => r.name === args[2]);
 
