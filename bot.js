@@ -32,8 +32,11 @@ client.on('message', message => {
                         message.delete();
                     }
     }
+
 */
-    mutedUsers.forEach(x => {
+
+    mutedUsers.forEach(checkIfUserIsMuted(x) {
+
         if (mutedUsers[x] == message.author.id) {
             message.delete();
         }
@@ -154,7 +157,7 @@ client.on('message', message => {
                     user = message.mentions.users.first();
 
                     console.log(user);
-                    
+
                     mutedUsers.push(user.id);
                     
                     mutedUsers.forEach(element => {
