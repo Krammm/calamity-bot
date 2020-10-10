@@ -33,9 +33,14 @@ client.on('message', message => {
                     }
     }
 
+
 */
 
     mutedUsers.forEach(checkIfUserIsMuted(x) {
+
+
+
+   // mutedUsers.forEach(x => {
 
         if (mutedUsers[x] == message.author.id) {
             message.delete();
