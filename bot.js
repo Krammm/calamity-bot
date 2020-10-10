@@ -10,9 +10,7 @@ var mutedUsers = new Array();
 //var mutedUsersIndex = 0;
 
 client.on('ready', () => {
-
     console.log('I am ready!');
-
 });
 
 client.on('message', message => {
@@ -34,7 +32,7 @@ client.on('message', message => {
                         message.delete();
                     }
     }
-    */
+*/
     mutedUsers.forEach(x => {
         if (mutedUsers[x] == message.author.id) {
             message.delete();
@@ -154,7 +152,9 @@ client.on('message', message => {
             case 'mute':
                 try {
                     user = message.mentions.users.first();
+
                     console.log(user);
+                    
                     mutedUsers.push(user.id);
                     
                     mutedUsers.forEach(element => {
