@@ -25,7 +25,7 @@ client.on('message', message => {
 
     }
 
-    command = message.content.toLowerCase()
+    const command = message.content.toLowerCase()
     
     // Delete music bots commands in a non-music command channel
     
