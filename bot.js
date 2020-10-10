@@ -154,7 +154,7 @@ client.on('message', message => {
             case 'mute':
                 try {
                     user = message.mentions.users.first();
-
+                    console.log(user);
                     mutedUsers.push(user.id);
                     
                     mutedUsers.forEach(element => {
