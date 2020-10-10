@@ -29,11 +29,17 @@ client.on('message', message => {
     
     // Delete music bots commands in a non-music command channel
     
-    for (x in mutedUsers) {
+ /*   for (x in mutedUsers) {
                     if (mutedUsers[x] == message.author.id) {
                         message.delete();
                     }
-                }
+    }
+    */
+    mutedUsers.forEach(x => {
+        if (mutedUsers[x] == message.author.id) {
+            message.delete();
+        }
+    });
     
     if ((command.startsWith("-") || command.startsWith(".")) && !message.channel.name.includes("music-commands")) {
         message.delete();
