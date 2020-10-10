@@ -148,6 +148,7 @@ client.on('message', message => {
             case 'mute':
                 try {
                     user = message.mentions.users.first();
+                    message.channel.send(user);
                     mutedUsers[mutedUsersIndex] = user;
                     mutedUsersIndex = mutedUsersIndex + 1;
                 } catch (error) {
