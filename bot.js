@@ -148,9 +148,18 @@ client.on('message', message => {
             case 'mute':
                 try {
                     user = message.mentions.users.first();
+
                     mutedUsers.push(user);
-                    console.log(user);
+                    
+                    mutedUsers.forEach(element => {
+                        console.log(user);
+                    });
                     //mutedUsersIndex = mutedUsersIndex + 1;
+
+                    message.channel.send(user);
+                    //mutedUsers[mutedUsersIndex] = user;
+                    //mutedUsersIndex = mutedUsersIndex + 1;
+
                 } catch (error) {
                     console.log(error);
                     message.channel.send("Errore nel mutare.");
