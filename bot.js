@@ -147,7 +147,7 @@ client.on('message', message => {
                 break;
             case 'mute':
                 try {
-                    let user = message.mentions.users.first();
+                    user = message.mentions.users.first();
                     mutedUsers[mutedUsersIndex] = user;
                     mutedUsersIndex = mutedUsersIndex + 1;
                 } catch (error) {
