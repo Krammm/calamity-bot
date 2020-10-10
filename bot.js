@@ -29,11 +29,11 @@ client.on('message', message => {
     if ((command.startsWith("-") || command.startsWith(".")) && !message.channel.name.includes("music-commands")) {
         message.delete();
     }
-    if ((message.author.id === 235088799074484224) && !message.channel.name.includes("music-commands")) {
+    if ((message.author.id == 235088799074484224) && !message.channel.name.includes("music-commands")) {
         message.delete();
     }
-    if ((message.author.id === 234395307759108106) && !message.channel.name.includes("music-commands")) {
-        message.delete();
+    if ((message.author.id == 234395307759108106) && !message.channel.name.includes("music-commands")) {
+        message.deletehow to delet();
     }
     
     
