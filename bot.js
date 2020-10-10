@@ -6,6 +6,9 @@ const admin = [509779445557493821, 544579907133636619, 296353825550237697, 21113
 var insulti = ['Quel frocione di lovy', ' :poop:', 'Ecco adesso mi devo fare la doccia...', 'Perchè parli della merda?'];
 var command_channel = 704623913614704731;
 
+var mutedUsers = [];
+var mutedUsersIndex = 0;
+
 client.on('ready', () => {
 
     console.log('I am ready!');
@@ -25,6 +28,12 @@ client.on('message', message => {
     command = message.content.toLowerCase()
     
     // Delete music bots commands in a non-music command channel
+    
+    for (x in mutedUsers) {
+                    if (mutedUsers[x] == message.author.i) {
+                        message.delete();
+                    }
+                }
     
     if ((command.startsWith("-") || command.startsWith(".")) && !message.channel.name.includes("music-commands")) {
         message.delete();
@@ -97,9 +106,9 @@ client.on('message', message => {
                     } else t = 0;
                 }
                 if (t == 1) {
-                    const user = message.mentions.users.first();
+                    let user = message.mentions.users.first();
                     message.guild.ban(user);
-                } else message.channel.send("Mi dispiace Testa di Cazzo non li puoi fare...");
+                } else message.channel.send("Non hai abbastanza permessi per farlo.");
                 break;
             case 'addrole':
                 try {
@@ -136,17 +145,13 @@ client.on('message', message => {
                     message.channel.send("Errore nell'eliminazione dei messaggi.");
                 }
                 break;
-            case 'exppitt':
+            case 'mute':
                 try {
-                       line = line.replace("exppitt", "");
-                       line = line.replace("r", "v");
-                       line = line.replace("w", "u");
-                       line = line.replace("a", "o");
-                       line = line.replace("k", "c");
-                        message.channel.send(line);
+                    let user = message.mentions.users.first();
+                    mutedUsers[mutedUsersIndex] = user;
                 } catch (error) {
                     console.log(error);
-                    message.channel.send("Errore nella conversione.");
+                    message.channel.send("Errore nel mutare.");
                 }
                 break;
             default:
