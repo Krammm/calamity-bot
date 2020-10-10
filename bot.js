@@ -55,8 +55,8 @@ client.on('message', message => {
                 message.channel.send('I comandi disponibili sono: aiuto, ping, dado, timer, lunghezza.');
                 break;
             case 'ping':
-                apiPing = Math.round(message.client.ping);
-                responseTime = Math.round(Date.now() - message.createdTimestamp);
+                let apiPing = Math.round(message.client.ping);
+                let responseTime = Math.round(Date.now() - message.createdTimestamp);
                 message.channel.send(`**Ping:** \`${responseTime}ms\``);
                 break;
             case 'dado':
