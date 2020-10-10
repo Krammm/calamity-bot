@@ -152,7 +152,7 @@ client.on('message', message => {
                     mutedUsers.push(user);
                     
                     mutedUsers.forEach(element => {
-                        console.log(element);
+                        console.log(element.id);
                     });
                     //mutedUsersIndex = mutedUsersIndex + 1;
 
