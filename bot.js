@@ -103,7 +103,6 @@ client.on('message', message => {
                 message.channel.send("DEBUG --- Command: " + command + " Line: " + line);
                 break;
         }
-    }
 
 });
 
