@@ -17,7 +17,7 @@ client.on('message', message => {
 
         if (mutedUsers[x] == message.author.id) {
             message.delete();
-            return();
+            return;
         }
     });
     
@@ -25,7 +25,7 @@ client.on('message', message => {
 
    	 if ((text.startsWith("-") || command.startsWith(".")) && !message.channel.name.includes("music-commands")) { // Deleting music commands outside of #music-commands
       	 message.delete();
-      	 return();
+      	 return;
     }
     
    		const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
